@@ -1,0 +1,15 @@
+ARG TAG=latest
+ARG REPO
+ARG OWNER
+FROM docker.pkg.github.com/$OWNER/$REPO/$REPO:$TAG
+
+RUN bundle config --global frozen 1 && \
+    bundle config unset without && \
+    apk add --no-cache --update build-base tzdata yarn openssl mysql-dev sqlite-dev
+COPY Gemfile Gemfile.lock /app/
+WORKDIR /app
+RUN bundle install --jobs=4
+RUN gem install rubocop rubycritic license_finder
+ENV RAILS_ENV=test
+
+ENTRYPOINT ["sh","-e","test.sh"]

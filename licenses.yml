@@ -1,0 +1,103 @@
+---
+- - :permit
+  - MIT
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:18:15.414676394 Z
+- - :permit
+  - Apache 2.0
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:25:15.709476833 Z
+- - :permit
+  - ISC
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:27:06.784892237 Z
+- - :permit
+  - WTFPL
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:27:32.512823843 Z
+- - :permit
+  - ruby
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:27:39.074166995 Z
+- - :permit
+  - Simplified BSD
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:27:52.030027785 Z
+- - :permit
+  - CC0-1.0
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:28:03.916488287 Z
+- - :permit
+  - New BSD
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:30:55.952617051 Z
+- - :permit
+  - MIT*
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:33:24.444160995 Z
+- - :permit
+  - CC-BY-4.0
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:33:32.524838435 Z
+- - :permit
+  - BSD*
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:33:41.457944100 Z
+- - :permit
+  - MIT AND Zlib
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:35:41.688863560 Z
+- - :permit
+  - CC-BY-3.0
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:36:50.505220119 Z
+- - :permit
+  - BSD Zero Clause License
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:37:03.500866207 Z
+- - :approve
+  - pako
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:39:50.424834979 Z
+- - :approve
+  - tweetnacl
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:40:41.626942009 Z
+- - :approve
+  - fsevents
+  - :who: tacho
+    :why: 
+    :versions: []
+    :when: 2020-08-31 23:41:25.758077144 Z
