@@ -8,20 +8,19 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <% if logged_in? %>
-          <%= link_to gravatar_for(current_user, size: 30, class: 'rounded shadow '), current_user, class: "nav-link" %>
         <% else %>
           <%= link_to 'Inicia Sesión', login_path, class: "nav-link" %>
         <% end %>
       </li>
       <% if logged_in? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Settings
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'End Session', logout_path, class: 'dropdown-item' %>
-          </div>
-        </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">  <%= gravatar_for(current_user, size: 30, class: 'rounded shadow ') %> </a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="nav-link nav-option" href="me"> <i class="fas fa-user-cog"></i> Configuraciones </a>
+          <a class="nav-link nav-option" href="/logout"> <i class="fas fa-sign-out-alt"></i> Cerrar Sesión </a>
+        </div>
+      </li>
       <% else %>
         <%= link_to 'Registrarse', signup_path, class: 'nav-link' %>
       <% end %>

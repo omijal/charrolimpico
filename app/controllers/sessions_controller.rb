@@ -45,7 +45,7 @@ class SessionsController < ActionController::Base
   end
 
   def new
-    redirect_to(root_path) if logged_in?
+    redirect_to('/dashboard') if logged_in?
   end
 
   def find_user(username)
@@ -64,8 +64,8 @@ class SessionsController < ActionController::Base
   def create
     if (user = authenticate?(params[:session]))
       build_session(user)
-      flash[:notice] = "Welcome #{user.username}. What are we gonna do tonight?"
-      redirect_to(user)
+      flash[:notice] = "Bienvenido #{user.username}. ¿Qué vamos a hacer esta noche?"
+      redirect_to('/dashboard')
     else
       flash.now[:alert] = 'Invalid Credentials'
       render('new')
@@ -74,7 +74,7 @@ class SessionsController < ActionController::Base
 
   def destroy
     session[:jwt] = nil
-    flash.now[:alert] = 'Good bye!'
+    flash.now[:alert] = '¡Adiós!'
     render('new')
   end
 end
