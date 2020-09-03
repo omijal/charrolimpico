@@ -57,9 +57,44 @@ TEST_SESSION_DATA = {
   password: 'secret'
 }.freeze
 
+ORG_TEST_DATA = {
+  fullname: 'omijal', shortname: 'omijal'
+}.freeze
+
+CAREER_TEST_DATA = {
+  fullname: 'olimpiada primaria', shortname: 'omijalp'
+}.freeze
+
+def create_test_organization
+  organization = Organization.new(ORG_TEST_DATA)
+  organization.save
+  organization
+end
+
 def login!
   user = User.create(::TEST_USER_DATA)
   user.save
-  post '/login', { params: { session: ::TEST_SESSION_DATA } }
+  post('/login', params: { session: ::TEST_SESSION_DATA })
   user
+end
+
+module TestFields
+  def test_fields(fields: %i[shortname fullname], short: 1, long: 120)
+    fields.each do |field|
+      test "#{field} should be present" do
+        @object.send("#{field}=".to_sym, ' ')
+        refute(@object.valid?)
+      end
+
+      test "#{field} should not be too long" do
+        @object.send("#{field}=".to_sym, 'x' * long)
+        refute(@object.valid?)
+      end
+
+      test "#{field} should not be too short" do
+        @object.send("#{field}=".to_sym, 'x' * short)
+        refute(@object.valid?)
+      end
+    end
+  end
 end
