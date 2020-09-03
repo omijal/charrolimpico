@@ -1,22 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to "Your site branding", root_path, class: "navbar-brand", id: "logo" %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+  <%= link_to image_tag(asset_url('omijal-logo.jpg'), width: 120), root_path, class: "navbar-brand", id: "logo" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"> Some menu </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"> Other menu </a>
-      </li>
       <li class="nav-item">
         <% if logged_in? %>
-          <%= link_to 'My Profile', current_user, class: "nav-link" %>
+          <%= link_to gravatar_for(current_user, size: 30, class: 'rounded shadow '), current_user, class: "nav-link" %>
         <% else %>
-          <%= link_to 'Log in', login_path, class: "nav-link" %>
+          <%= link_to 'Inicia Sesión', login_path, class: "nav-link" %>
         <% end %>
       </li>
       <% if logged_in? %>
@@ -29,12 +23,8 @@
           </div>
         </li>
       <% else %>
-        <%= link_to 'Sign Up!', signup_path, class: 'nav-link' %>
+        <%= link_to 'Registrarse', signup_path, class: 'nav-link' %>
       <% end %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>

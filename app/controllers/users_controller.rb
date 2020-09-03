@@ -21,8 +21,8 @@ class UsersController < ActionController::Base
   def create
     @user = User.new(build_params)
     if @user.save
-      flash[:notice] = "You signup was successful. Welcome #{@user.username}!"
-      redirect_to(root_path)
+      flash[:notice] = "Tu registro fue satisfactorio. !Bienvenido #{@user.username}!"
+      redirect_to(login_path)
     else
       render('new')
     end

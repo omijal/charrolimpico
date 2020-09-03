@@ -1,38 +1,70 @@
 @import 'bootstrap/dist/css/bootstrap';
 
+* {
+  font-family: "mono";
+ }
+
 .navbar {
-  background-color: black !important;
+  background-color: white !important;
 }
 
 .nav-link {
-  color: white !important;
+  color: darkblue !important;
 }
 
 #logo {
   float: left;
   font-size: 1.7em;
-  color:  white;
+  color:  darkblue;
   text-transform: uppercase;
   letter-spacing: -1px;
   // font-style: italic;
   font-weight: bold;
 }
 
+.border-darkblue {
+  border-color: !important darkblue;
+  border-width: 2px;
+}
+
+.fixed-bottom {
+  margin-top: 80px;
+  background-color: darkblue !important;
+  color: white;
+}
+
+.bg-dark {
+  background-color: darkblue !important;
+  color: white;
+}
+
 #home-container {
   margin-top: 25px;
 }
 
+.text-darkblue {
+  color: darkblue;
+}
+
+.text-jumbo {
+  color: darkblue;
+}
+
+body {
+  padding-bottom: 20px;
+}
+
 .jumbotron {
   background-image: asset-url('jumbo-bg.jpg');
-  background-position: center;
+  background-position: right 50% top 0px;
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
+  background-size: 125%;
+  height: 550px;
 }
 
 #page-container{
   flex: 1 0 auto;
-  background-color: lightgrey;
+  background-color: white;
 }
 
 /* pagination CSS */
