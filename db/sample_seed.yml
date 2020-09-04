@@ -1,0 +1,30 @@
+organizations:
+  - fullname: 'Olimpiada de Informática del Estado de Jalisco',
+    shortname: 'omijal'
+    users:
+      - username: 'tacho'
+        email: 'tachoguitar@gmail.com'
+        password: '1234'
+    careers:
+      - shortname: 'omijal'
+      - fullname: 'OMIJal Fase Estatal'
+        courses:
+          - shortname: numbertheoryi
+          - fullname: Teoría de Números I
+    categories:
+      - shortname: primos
+        fullname: Números primos
+        problems:
+          - shortname: divisoresnfactorial
+            fullname: Divisores de N!
+            url: https://omegaup.com/arena/problem/Divisores-de-N
+judges:
+  - shortname: omega
+    fullname: omegaup
+    url: https://omegaup.com
+tasks:
+  -
+users
+categories
+problems
+courses

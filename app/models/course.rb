@@ -5,7 +5,10 @@ class Course < ApplicationRecord
   validates :fullname, presence: true, length: { minimum: 3, maximum: 128 }
 
   belongs_to :organization
-  has_many :problems, though: :tasks
-  has_many :courses, through: :syllabi
+  has_many :tasks
+  has_many :syllabi
+  has_many :registrations
+  has_many :problems, through: :tasks
+  has_many :careers, through: :syllabi
   has_many :users, through: :registrations
 end

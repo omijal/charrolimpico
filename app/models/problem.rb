@@ -8,5 +8,6 @@ class Problem < ApplicationRecord
   belongs_to :organization
   belongs_to :judge
   has_many :courses, through: :tasks
+  has_many :problem_classifications
   has_many :categories, through: :problem_classifications
 end
