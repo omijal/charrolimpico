@@ -12,4 +12,18 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   get 'logout', to: 'sessions#destroy'
+
+  resources :organizations do
+    resources :categories, only: %i[new create]
+    resources :problems, only: %i[new create]
+    resources :careers, only: %i[new create]
+  end
+
+  resources :careers do
+    resources :enrollments, only: %i[new create]
+    resources :courses, only: %i[new create]
+  end
+
+  resources :course
+  resources :task
 end

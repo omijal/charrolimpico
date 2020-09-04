@@ -27,6 +27,7 @@
       <% else %>
         <%= link_to 'Registrarse', signup_path, class: 'nav-link' %>
       <% end %>
+        <%= render(navoptions) if defined?(navoptions) && navoptions %>
     </ul>
   </div>
 </nav>

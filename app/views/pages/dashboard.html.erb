@@ -1,0 +1,12 @@
+<h2 class="text-centered"> Tareas Pendientes </h2>
+<% current_user.courses.each do |course| %>
+  <%= link_to course.fullname, course %>
+  <% current_user.homeworks.collect(&:task).each do |task| %>
+    <% problem = task.problem %>
+    <ul>
+      <li>
+        <%= link_to task.problem.fullname, task %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>
