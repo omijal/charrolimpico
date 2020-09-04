@@ -12,7 +12,9 @@ class PagesController < ActionController::Base
 
   def dashboard
     require_login
+    @navoptions = 'dashboards/nav'
     @user = current_user
+    @tickets = current_user.homeworks.collect(&:task)
   end
 
   def admin

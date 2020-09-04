@@ -17,3 +17,12 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 import "bootstrap"
 import "@fortawesome/fontawesome-free/js/all";
+
+
+$(document).ready(function () {
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+
+});
