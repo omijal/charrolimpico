@@ -79,20 +79,27 @@ def login!
 end
 
 module TestFields
-  def test_fields(fields: %i[shortname fullname], short: 1, long: 120)
+  def value_asign(field, value)
+    @object.send("#{field}=".to_sym, value)
+  end
+
+  def _test_fields(fields: %i[shortname fullname], short: 1, long: 120)
     fields.each do |field|
-      test "#{field} should be present" do
-        @object.send("#{field}=".to_sym, ' ')
+      test "#{field} is valid" do
+        value_asign(field, ' ')
+        refute(@object.valid?)
+        value_asign(field, 'x' * long)
+        refute(@object.valid?)
+        value_asign(field, 'x' * short)
         refute(@object.valid?)
       end
+    end
+  end
 
-      test "#{field} should not be too long" do
-        @object.send("#{field}=".to_sym, 'x' * long)
-        refute(@object.valid?)
-      end
-
-      test "#{field} should not be too short" do
-        @object.send("#{field}=".to_sym, 'x' * short)
+  def _test_nil_value(fields)
+    fields.each do |field|
+      test "#{field} is not empty" do
+        value_asign(field, nil)
         refute(@object.valid?)
       end
     end

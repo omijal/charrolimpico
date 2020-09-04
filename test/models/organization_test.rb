@@ -8,5 +8,5 @@ class OrganizationTest < ActiveSupport::TestCase
     @object = Organization.new(ORG_TEST_DATA)
   end
 
-  test_fields(long: 132)
+  _test_fields(long: 132)
 end
