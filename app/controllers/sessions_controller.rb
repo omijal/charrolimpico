@@ -19,9 +19,10 @@ class SessionsController < ActionController::Base
     def self.parse(token)
       payload, = JWT.decode(token, nil, false, { algorithm: 'RS512' })
       new(User.find(payload['user']['id']))
+    rescue ActiveRecord::RecordNotFound
+      nil
     rescue StandardError => e
       raise unless ['Nil JSON web token'].include?(e.message)
-
       nil
     end
 

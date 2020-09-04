@@ -6,3 +6,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+tacho = User.create(username: 'tacho', email: 'tachoguitar@gmail.com', password: '1234')
+
+omijal = Organization.create(
+  fullname: 'Olimpiada de Informática del Estado de Jalisco',
+  shortname: 'omijal'
+)
+
+estatal = Career.create(shortname: 'omijal', fullname: 'OMIJal Fase Estatal')
+estatal.organization = omijal

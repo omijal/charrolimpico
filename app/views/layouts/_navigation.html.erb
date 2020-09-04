@@ -21,6 +21,9 @@
           <a class="nav-link nav-option" href="/logout"> <i class="fas fa-sign-out-alt"></i> Cerrar Sesión </a>
         </div>
       </li>
+        <% if admin? %>
+          <%= link_to 'Catalogos', '/dashboard', class: "nav-link" %>
+        <% end %>
       <% else %>
         <%= link_to 'Registrarse', signup_path, class: 'nav-link' %>
       <% end %>

@@ -4,6 +4,7 @@ require('test_helper')
 
 class OrganizationTest < ActiveSupport::TestCase
   extend TestFields
+  include TestFields
   def setup
     @object = Organization.new(ORG_TEST_DATA)
   end

@@ -12,5 +12,12 @@ class PagesController < ActionController::Base
 
   def dashboard
     require_login
+    @user = current_user
+  end
+
+  def admin
+    require_admin
+
+    @catalogs = %w[organizations categories courses problems careers tasks]
   end
 end

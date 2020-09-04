@@ -23,10 +23,21 @@ module ApplicationHelper
     redirect_to(login_path)
   end
 
+  def require_admin(domain)
+    return if admin?
+
+    flash[:alert] = 'You are not allowed to perform this action'
+    redirect_to(domain)
+  end
+
   def require_user(user, domain)
     return if user == current_user
 
     flash[:alert] = 'You are not allowed to perform this action'
     redirect_to(domain)
+  end
+
+  def admin?
+    true
   end
 end

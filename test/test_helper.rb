@@ -65,10 +65,28 @@ CAREER_TEST_DATA = {
   fullname: 'olimpiada primaria', shortname: 'omijalp'
 }.freeze
 
+COURSE_TEST_DATA = {
+  fullname: 'número primos', shortname: 'M101'
+}.freeze
+
+JUDGE_TEST_DATA = {
+  fullname: 'omega', shortname: 'omega', url: 'https://omegaup.com', configs: {}
+}.freeze
+
+PROBLEM_TEST_DATA = {
+  fullname: 'n primos', shortname: 'nprimos', url: 'https://omegaup.com/problems/nprimos'
+}.freeze
+
 def create_test_organization
   organization = Organization.new(ORG_TEST_DATA)
   organization.save
   organization
+end
+
+def create_test_judge
+  judge = Judge.new(JUDGE_TEST_DATA)
+  judge.save
+  judge
 end
 
 def login!
@@ -84,14 +102,13 @@ module TestFields
   end
 
   def _test_fields(fields: %i[shortname fullname], short: 1, long: 120)
+    test('object is valid') { assert(@object.valid? || puts(@object.errors.full_messages)) }
     fields.each do |field|
       test "#{field} is valid" do
-        value_asign(field, ' ')
-        refute(@object.valid?)
-        value_asign(field, 'x' * long)
-        refute(@object.valid?)
-        value_asign(field, 'x' * short)
-        refute(@object.valid?)
+        [' ', 'x' * long, 'x' * short].each do |val|
+          value_asign(field, val)
+          refute(@object.valid?)
+        end
       end
     end
   end
