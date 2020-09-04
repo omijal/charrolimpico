@@ -20,9 +20,14 @@ import "@fortawesome/fontawesome-free/js/all";
 
 
 $(document).ready(function () {
-
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
     });
+    $('#sidebar').mouseenter(function () {
+        $('#sidebar').attr('class', '');
+    });
 
+    $('#page-container').mouseenter(function () {
+      $('#sidebar').attr('class', 'active');
+    });
 });
