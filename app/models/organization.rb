@@ -6,6 +6,6 @@ class Organization < ApplicationRecord
 
   has_many :careers
   has_many :categories
-  has_many :tasks
   has_many :problems
+  has_many :users, through: :members
 end

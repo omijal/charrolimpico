@@ -5,4 +5,6 @@ class Career < ApplicationRecord
   validates :fullname, presence: true, length: { minimum: 3, maximum: 128 }
 
   belongs_to :organization
+  has_many :users, through: :enrollments
+  has_many :curses, through: :syllabi
 end

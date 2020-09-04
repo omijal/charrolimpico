@@ -5,4 +5,5 @@ class Category < ApplicationRecord
   validates :organization_id, presence: true
 
   belongs_to :organization
+  has_many :problems, through: :problem_classifications
 end

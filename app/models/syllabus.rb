@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Task < ApplicationRecord
-  belongs_to :problem
+class Syllabus < ApplicationRecord
+  belongs_to :career
   belongs_to :course
 end
