@@ -31,7 +31,7 @@ gem('will_paginate', '~> 3.1.6')
 gem('bootsnap', '>= 1.4.2', require: false)
 gem('jwt', '~> 2.2.2')
 
-gem "sprockets-rails", git: 'https://github.com/rails/sprockets-rails.git'
+gem 'sprockets-rails', git: 'https://github.com/rails/sprockets-rails.git'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

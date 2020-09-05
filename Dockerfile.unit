@@ -5,7 +5,7 @@ FROM docker.pkg.github.com/$OWNER/$REPO/$REPO:$TAG
 
 RUN bundle config --global frozen 1 && \
     bundle config unset without && \
-    apk add --no-cache --update build-base tzdata yarn openssl mysql-dev sqlite-dev
+    apk add --no-cache --update build-base tzdata yarn openssl mysql-dev sqlite-dev git
 COPY Gemfile Gemfile.lock /app/
 WORKDIR /app
 RUN bundle install --jobs=4

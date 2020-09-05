@@ -23,6 +23,7 @@ class SessionsController < ActionController::Base
       nil
     rescue StandardError => e
       raise unless ['Nil JSON web token'].include?(e.message)
+
       nil
     end
 

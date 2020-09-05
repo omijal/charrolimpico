@@ -1,8 +1,10 @@
 AllCops:
   Exclude:
     - bin/bundle
+    - bin/rails
     - node_modules/**/*
     - db/schema.rb
+    - db/migrate/*
 Style/Documentation:
   Enabled: false
 Layout/EmptyLinesAroundAttributeAccessor:

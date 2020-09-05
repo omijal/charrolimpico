@@ -13,7 +13,7 @@ services:
       DB_HOST: db
       RAILS_SERVE_STATIC_FILES: "true"
       RAILS_LOG_TO_STDOUT: "true"
-    image: 'railsapp:latest'
+    image: 'docker.pkg.github.com/omijal/charrolimpico/charrolimpico:develop'
     ports:
       - 3000:3000
   db:
