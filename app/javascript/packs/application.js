@@ -27,7 +27,7 @@ $(document).ready(function () {
         $('#sidebar').attr('class', '');
     });
 
-    $('#page-container').mouseenter(function () {
+    $('#home-container').mouseenter(function () {
       $('#sidebar').attr('class', 'active');
     });
 });
