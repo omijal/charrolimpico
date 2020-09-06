@@ -60,10 +60,13 @@ homework = Homework.create(user: tacho, task: task, status: 'to-do')
 homework.save!
 
 divisores.categories << numteo
-Enrollment.create(user: tacho, role_id: admin.id, career: estatal)
-Registration.create(user: tacho, course: numteoi, status: 'locked')
+
 numteoi.careers << estatal
 tacho.save!
 omijal.save!
 estatal.save!
 omega.save!
+
+Enrollment.create(user: tacho, role_id: admin.id, career: estatal).save!
+Registration.create(user: tacho, course: numteoi, status: 'locked').save!
+Member.create(user: tacho, organization: omijal, role_id: admin.id).save!

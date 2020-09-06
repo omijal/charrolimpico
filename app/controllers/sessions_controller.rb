@@ -61,6 +61,9 @@ class SessionsController < ActionController::Base
 
   def build_session(user)
     session[:jwt] = Token.new(user).jwt
+    org = user.organizations.first
+    session[:org] = org&.id
+    session[:org_name] = org&.shortname
   end
 
   def create
@@ -76,6 +79,7 @@ class SessionsController < ActionController::Base
 
   def destroy
     session[:jwt] = nil
+    session[:org] = nil
     flash.now[:alert] = '¡Adiós!'
     render('new')
   end

@@ -29,8 +29,8 @@
     margin-top: -40px;
     min-width: 250px;
     max-width: 250px;
-    background: darkblue;
-    color: #fff;
+    background: #888888;
+    color: #darkblue;
     transition: all 0.3s;
 }
 
@@ -40,7 +40,8 @@
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #222222;
+    color: white;
 }
 
 #sidebar ul.components {
@@ -54,20 +55,21 @@
 }
 
 #sidebar ul li a {
+    background-color: #666666;
     padding: 10px;
     font-size: 1.1em;
     display: block;
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: white;
+    background: #AAAAAA;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #444444;
 }
 
 #logo {

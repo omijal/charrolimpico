@@ -22,4 +22,4 @@ COPY --from=builder /app/ /app/
 
 EXPOSE 3000
 
-ENTRYPOINT ["sh","entrypoint.sh"]
+ENTRYPOINT ["sh","-e","entrypoint.sh"]

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_030335) do
+ActiveRecord::Schema.define(version: 2020_09_06_183000) do
 
   create_table "careers", force: :cascade do |t|
     t.string "shortname", null: false
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 2020_09_04_030335) do
     t.string "fullname", null: false
     t.string "url", null: false
     t.text "configs"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "organization_id"
+    t.integer "role_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

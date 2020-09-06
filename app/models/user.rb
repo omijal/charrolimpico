@@ -12,6 +12,7 @@ class User < ApplicationRecord
             format: { with: URI::MailTo::EMAIL_REGEXP }
   has_many :registrations
   has_many :homeworks
+  has_many :members
   has_many :organizations, through: :members
   has_many :careers, through: :enrollments
   has_many :tasks, through: :homeworks
