@@ -8,10 +8,16 @@ Rails.application.routes.draw do
   resources :users, except: %i[new destroy index]
   get 'dashboard', to: 'pages#dashboard'
 
+  get '/users', to: 'users#new'
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   get 'logout', to: 'sessions#destroy'
+
+  scope :admin do
+    resources :organizations
+  end
 
   resources :organizations do
     resources :categories, only: %i[new create]

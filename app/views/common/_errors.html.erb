@@ -3,7 +3,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hiden="true">&times;</span>
     </button>
-    <h4 class="alert-heading">The following errors prevented the <%= obj.class.name.downcase %> from being saved:</h4>
+    <h4 class="alert-heading">Se dectaron los siguientes errores:</h4>
     <ul>
       <% obj.errors.full_messages.each do |er| %>
       <li> <%= er %> </li>

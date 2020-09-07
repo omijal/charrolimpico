@@ -2,14 +2,14 @@
 
 require_relative 'basic_catalog_controller'
 
-class UsersController < BasicCatalogController
+class OrganizationsController < BasicCatalogController
   before_action :find_object, only: %i[show edit update destroy]
   before_action :check_user, only: %i[edit update]
 
   include ApplicationHelper
 
   def model
-    User
+    Organization
   end
 
   def check_user
