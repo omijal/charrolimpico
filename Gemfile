@@ -22,7 +22,9 @@ gem('jbuilder', '~> 2.7')
 # Use Active Model has_secure_password
 gem('bcrypt', '~> 3.1.7')
 gem('font-awesome-rails', '~> 4.7.0')
+gem('httparty')
 gem('mysql2', '~> 0.5.3')
+gem('telegram-bot-ruby')
 gem('will_paginate', '~> 3.1.6')
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
