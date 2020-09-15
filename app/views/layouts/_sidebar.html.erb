@@ -1,0 +1,30 @@
+<% if logged_in? %>
+<nav id="sidebar" class="active">
+  <div class="sidebar-header">
+    <h3><%= session[:org_name]&.capitalize %></h3>
+  </div>
+
+    <ul class="list-unstyled components">
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administración</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="/admin/organizations/<%= session[:org] %>">Organización</a>
+                </li>
+                <li>
+                  <a href="/users">Usuarios</a>
+                </li>
+                <li>
+                    <a href="/careers">Procesos</a>
+                </li>
+                <li>
+                    <a href="/courses">Cursos</a>
+                </li>
+                <li>
+                    <a href="/problems">Problemas</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<% end %>

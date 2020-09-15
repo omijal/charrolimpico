@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello World!</title>
+    <title><%= @title || 'Charrolímpico' %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body class="d-flex flex-column">
-    <%= render 'layouts/navigation' %>
-    <div id="page-container">
-      <div class="container" id="home-container">
+      <%= render 'layouts/navigation' %>
+       <div id="page-container">
+         <div class="wrapper">
+         <%= render 'layouts/sidebar' %>
+         <div class="container content" id="home-container">
 
-        <% flash.each do |_, msg| %>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <%= msg %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <% end %>
-        <%= yield %>
-      </div>
-    </div>
-    <%= render 'layouts/footer' %>
+           <% flash.each do |type, msg| %>
+           <div class="alert alert-<%= type %> alert-dismissible fade show" role="alert">
+             <%= msg %>
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <% end %>
+           <%= yield %>
+         </div>
+       </div>
+
+       <%= render 'layouts/footer' %>
+   </div>
   </body>
 </html>

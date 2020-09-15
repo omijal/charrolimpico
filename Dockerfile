@@ -2,7 +2,7 @@ FROM ruby:2.7.1-alpine as builder
 
 RUN bundle config --global frozen 1 && \
     bundle config set without 'test development' && \
-    apk add --no-cache --update build-base tzdata yarn openssl mysql-dev
+    apk add --no-cache --update build-base tzdata yarn openssl mysql-dev git
 RUN mkdir -p /app
 WORKDIR /app
 COPY Gemfile Gemfile.lock /app/
@@ -22,4 +22,4 @@ COPY --from=builder /app/ /app/
 
 EXPOSE 3000
 
-ENTRYPOINT ["sh","entrypoint.sh"]
+ENTRYPOINT ["sh","-e","entrypoint.sh"]

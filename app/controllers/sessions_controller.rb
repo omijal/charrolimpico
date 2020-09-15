@@ -19,6 +19,8 @@ class SessionsController < ActionController::Base
     def self.parse(token)
       payload, = JWT.decode(token, nil, false, { algorithm: 'RS512' })
       new(User.find(payload['user']['id']))
+    rescue ActiveRecord::RecordNotFound
+      nil
     rescue StandardError => e
       raise unless ['Nil JSON web token'].include?(e.message)
 
@@ -45,7 +47,7 @@ class SessionsController < ActionController::Base
   end
 
   def new
-    redirect_to(root_path) if logged_in?
+    redirect_to('/dashboard') if logged_in?
   end
 
   def find_user(username)
@@ -59,22 +61,26 @@ class SessionsController < ActionController::Base
 
   def build_session(user)
     session[:jwt] = Token.new(user).jwt
+    org = user.organizations.first
+    session[:org] = org&.id
+    session[:org_name] = org&.shortname
   end
 
   def create
     if (user = authenticate?(params[:session]))
       build_session(user)
-      flash[:notice] = "Welcome #{user.username}. What are we gonna do tonight?"
-      redirect_to(user)
+      flash[:success] = "Bienvenido #{user.username}. ¿Qué vamos a hacer esta noche?"
+      redirect_to('/dashboard')
     else
-      flash.now[:alert] = 'Invalid Credentials'
+      flash.now[:danger] = 'Credenciales Incorrectas'
       render('new')
     end
   end
 
   def destroy
     session[:jwt] = nil
-    flash.now[:alert] = 'Good bye!'
+    session[:org] = nil
+    flash.now[:info] = '¡Adiós!'
     render('new')
   end
 end
