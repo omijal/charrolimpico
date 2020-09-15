@@ -5,23 +5,6 @@
   </div>
 
     <ul class="list-unstyled components">
-        <li class="active">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">About</a>
-        </li>
         <li>
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administración</a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -29,24 +12,18 @@
                     <a href="/admin/organizations/<%= session[:org] %>">Organización</a>
                 </li>
                 <li>
-                  <a href="#">Usuarios</a>
+                  <a href="/users">Usuarios</a>
                 </li>
                 <li>
-                    <a href="#">Procesos</a>
+                    <a href="/careers">Procesos</a>
                 </li>
                 <li>
-                    <a href="#">Cursos</a>
+                    <a href="/courses">Cursos</a>
                 </li>
                 <li>
-                    <a href="#">Problemas</a>
+                    <a href="/problems">Problemas</a>
                 </li>
             </ul>
-        </li>
-        <li>
-            <a href="#">Portfolio</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
         </li>
     </ul>
 </nav>
