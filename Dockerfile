@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-alpine as builder
+FROM ruby:2.7.2-alpine as builder
 
 RUN bundle config --global frozen 1 && \
     bundle config set without 'test development' && \
@@ -13,7 +13,7 @@ RUN rake assets:precompile && rm -rf node_modules tmp /usr/local/bundle/cache /u
 RUN openssl genrsa 2048 > /app/storage/jwt.pem
 
 #===============================================================================
-FROM ruby:2.7.1-alpine
+FROM ruby:2.7.2-alpine
 RUN apk add --no-cache --update mysql-dev tzdata openssl
 RUN mkdir -p /app/storage
 WORKDIR /app
